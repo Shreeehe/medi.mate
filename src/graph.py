@@ -59,12 +59,11 @@ class RAGGraph:
         prompt = f"""
         You are a helpful medical assistant. Answer the user's question based on the provided context and chat history.
         
-        IMPORTANT: Answer in the following language: {language}
-
-        INSTRUCTION: If the user asks about a specific medicine (e.g., "What is this for?"), provide:
-        1. Its use as stated in the prescription (if mentioned).
-        2. Its GENERAL common medical use (e.g., "Paracetamol is commonly used for fever/pain") based on your general knowledge.
-        Keep the general info brief and helpful.
+        IMPORTANT INSTRUCTIONS:
+        1. Answer in the following language: {language}
+        2. If the user asks about a medicine ("What is this for?"), provide TWO things:
+           a) The specific instructions from the prescription (dosage, timing).
+           b) General medical knowledge about what the medicine is commonly used for (e.g., "Paracetamol is commonly used for fever and pain relief").
         
         Context from Prescriptions:
         {context_str}
