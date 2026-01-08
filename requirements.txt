@@ -1,0 +1,12 @@
+streamlit
+google-generativeai
+pinecone
+langgraph
+langchain-google-genai
+langchain-community
+pymongo
+python-dotenv
+pypdf
+pillow
+tiktoken
+bcrypt
