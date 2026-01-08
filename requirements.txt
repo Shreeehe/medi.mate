@@ -9,4 +9,7 @@ python-dotenv
 pypdf
 pillow
 tiktoken
+google-auth-oauthlib
+google-auth-httplib2
+google-api-python-client
 bcrypt
