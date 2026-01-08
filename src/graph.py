@@ -12,6 +12,7 @@ class GraphState(TypedDict):
     question: str
     prescription_id: Optional[str] # None for Global, ID for Local
     session_id: str
+    language: str # New field
     # history_summary: str # Removed
     context: List[str]
     answer: str
@@ -45,6 +46,7 @@ class RAGGraph:
         logger.info("Node: Generate")
         question = state["question"]
         context = state["context"]
+        language = state.get("language", "English") # Default to English
         # summary = state["history_summary"] # Removed
         
         context_str = "\n\n".join(context)
@@ -56,6 +58,13 @@ class RAGGraph:
         
         prompt = f"""
         You are a helpful medical assistant. Answer the user's question based on the provided context and chat history.
+        
+        IMPORTANT: Answer in the following language: {language}
+
+        INSTRUCTION: If the user asks about a specific medicine (e.g., "What is this for?"), provide:
+        1. Its use as stated in the prescription (if mentioned).
+        2. Its GENERAL common medical use (e.g., "Paracetamol is commonly used for fever/pain") based on your general knowledge.
+        Keep the general info brief and helpful.
         
         Context from Prescriptions:
         {context_str}
