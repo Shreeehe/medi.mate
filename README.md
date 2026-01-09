@@ -1,4 +1,4 @@
-# 🩺 Medi-Mate
+#  Medi-Mate
 
 **Intelligent Prescription RAG Assistant with OTC Safety Verification**
 
@@ -6,33 +6,27 @@ Medi-Mate is an AI-powered healthcare assistant that helps users understand thei
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🔍 Prescription Analysis
+###  Prescription Analysis
 - **OCR & Extraction:** Upload handwritten or printed prescriptions (PDF/Image) and get structured data extraction using Google Gemini Vision.
 - **Interactive Chat:** Ask questions about your prescription like *"When should I take this medicine?"* or *"What are the side effects?"*
 - **Context Memory:** The AI remembers your conversation history for natural follow-up questions.
 
-### 💊 OTC Safety Checker
+###  OTC Safety Checker
 - **Vector-Powered Search:** Uses Pinecone semantic search to find medicine matches efficiently.
 - **AI Verification:** LLM-based confirmation ensures accurate categorization.
 - **Clear Results:** Medicines are classified as:
-  - ✅ **Safe to Buy** - Available OTC
-  - ⚠️ **Consult Doctor** - Requires professional advice
+  -  **Safe to Buy** - Available OTC
+  -  **Consult Doctor** - Requires professional advice
 
-### 🔐 User Management
+###  User Management
 - Secure login/registration with bcrypt password hashing.
 - Per-user prescription history and chat sessions.
 - Persistent data storage in MongoDB.
-
-### 🎨 Modern UI
-- Premium glassmorphism design with animations.
-- Responsive Streamlit interface.
-- Gradient text, floating icons, and smooth transitions.
-
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────────┐     ┌──────────────────┐     ┌─────────────────┐
@@ -49,7 +43,7 @@ Medi-Mate is an AI-powered healthcare assistant that helps users understand thei
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 medi-mate-0.1/
@@ -79,13 +73,14 @@ medi-mate-0.1/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - Python 3.10+
 - MongoDB Atlas account (or local MongoDB)
 - Pinecone account
-- Google Cloud account (Gemini API)
+- Google Cloud account (Gemini API) (prefer gemini 2.5 flash lite, cheapest and fastest model out there with good accuracy )
+- if you want run locally i prefer gemma 3 4 billion model using ollama.
 
 ### Installation
 
@@ -122,7 +117,7 @@ medi-mate-0.1/
 
 ---
 
-## 🔧 Configuration
+##  Configuration
 
 | Variable | Description |
 |----------|-------------|
@@ -132,7 +127,7 @@ medi-mate-0.1/
 
 ---
 
-## 📖 Usage
+##  Usage
 
 ### Upload a Prescription
 1. Login or create an account.
@@ -152,7 +147,7 @@ medi-mate-0.1/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 Run OTC verification tests:
 ```bash
@@ -161,7 +156,7 @@ python -m pytest tests/test_otc_check.py -v
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Component | Technology |
 |-----------|------------|
@@ -174,22 +169,14 @@ python -m pytest tests/test_otc_check.py -v
 
 ---
 
-## 📄 License
-
-This project is for educational and research purposes.
-
----
-
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ---
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 **Medi-Mate is not a substitute for professional medical advice.** Always consult a qualified healthcare provider for medical decisions. The OTC classification is based on general guidelines and may not apply to all regions or individual health conditions.
 
 ---
-
-*Built with ❤️ using AI*
