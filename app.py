@@ -9,7 +9,7 @@ from src.graph import RAGGraph
 from src.memory import MemoryManager
 from src.auth import AuthManager
 from src.otc_manager import OTCManager
-from src.utils import setup_logger
+from src.utils import setup_logger, generate_report_text
 
 logger = setup_logger(__name__)
 
@@ -459,7 +459,18 @@ elif page == "Home":
                                         st.write(f"- **{item['name']}**: {item['reason']}")
                                 else:
                                     st.info("No medicines found to analyze.")
-                                st.button("View Allowed OTC List", key="btn_view_otc_list", on_click=switch_to_otc)
+                                col1_btn, col2_btn = st.columns([1, 1])
+                                with col1_btn:
+                                    st.button("View Allowed OTC List", key="btn_view_otc_list", on_click=switch_to_otc, use_container_width=True)
+                                with col2_btn:
+                                    report_text = generate_report_text(current_title, details_text, otc_result)
+                                    st.download_button(
+                                        label="📥 Download Report",
+                                        data=report_text,
+                                        file_name=f"MediMate_Report_{st.session_state.session_id}.txt",
+                                        mime="text/plain",
+                                        use_container_width=True
+                                    )
                     else:
                         st.info("No medicine details available to check.")
 

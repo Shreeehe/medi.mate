@@ -1,2 +1,8 @@
 .env
 __pycache__
+.pytest_cache
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.log
